@@ -5,3 +5,4 @@ public
 pnpm-lock.yaml
 **/*.test.js
 coverage
+components/ui*

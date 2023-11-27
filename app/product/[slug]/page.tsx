@@ -3,12 +3,12 @@ import { Star, Truck } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-import { ProductPreview } from '@/app/product/components/ProductPreview';
-import { IProduct, getStoreProductById } from '@/app/api/store';
 
-interface IProps {
-  slug: string;
-}
+import { ProductPreview } from '@/app/product/components/ProductPreview';
+import { AddToCartButton } from '@/app/product/components/AddToCartButton';
+import { IProduct, getStoreProductById } from '@/app/common/api/store';
+
+export const dynamic = 'force-dynamic';
 
 export default async function ProductPge({
   params,
@@ -17,7 +17,7 @@ export default async function ProductPge({
 }) {
   const data = await getStoreProductById(params.slug);
 
-  const { title, category, image, price, description, rating } =
+  const { id, title, category, image, price, description, rating } =
     (data as IProduct) ?? {};
 
   const prevPrice = price ? (price + 30).toFixed(2) : 0;
@@ -74,16 +74,15 @@ export default async function ProductPge({
             </div>
 
             <div className="flex gap-2.5">
-              {/* <AddToBag
+              <AddToCartButton
                 currency="USD"
-                description={data.description}
-                image={data.images[0]}
-                name={data.name}
-                price={data.price}
-                key={data._id}
-                price_id={data.price_id}
+                description={description}
+                image={image}
+                name={title}
+                price={price}
+                key={id}
               />
-              <CheckoutNow
+              {/* <CheckoutNow
                 currency="USD"
                 description={data.description}
                 image={data.images[0]}

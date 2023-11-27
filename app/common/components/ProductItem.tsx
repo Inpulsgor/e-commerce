@@ -2,8 +2,7 @@ import React, { FC, memo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { ShoppingBag } from 'lucide-react';
-import { IProduct } from '@/app/api/store';
+import { IProduct } from '@/app/common/api/store';
 
 interface IProps {
   product: IProduct;

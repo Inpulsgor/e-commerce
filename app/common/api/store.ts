@@ -15,6 +15,13 @@ export interface IProduct {
   rating: Rating;
 }
 
+enum Categories {
+  Electronics = 'electronics',
+  Jewelery = 'jewelery',
+  MensClothing = "men's clothing",
+  WomensClothing = "women's clothing",
+}
+
 export const getStoreProducts = async (): Promise<IProduct[]> => {
   const response = await fetch(`${baseUrl}/products`);
 
@@ -31,4 +38,12 @@ export const getStoreProductById = async (
   if (response) return response?.json();
 
   return null;
+};
+
+export const getProductCategories = async (): Promise<Categories[]> => {
+  const response = await fetch(`${baseUrl}/products/categories`);
+
+  if (response) return response?.json();
+
+  return [];
 };

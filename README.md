@@ -1,33 +1,58 @@
-Getting Started with Next.js 14 This repository contains the basic setup for a
-Next.js 14 project, a popular React framework for building modern web
-applications.
+# eShopping app
 
-Prerequisites Make sure you have Node.js and npm installed on your machine.
+## Getting Started
 
-Setup Clone the Repository:
+**Clone the repository:**
 
-bash Copy code git clone https://github.com/your-username/nextjs-14-starter.git
-Navigate to the Project Directory:
+```bash
+git clone https://github.com/your-username/your-project.git
+cd your-project
+```
 
-bash Copy code cd nextjs-14-starter Install Dependencies:
+1. Install dependencies:
 
-bash Copy code npm install Development To start the development server, run:
+```
+pnpm install
+```
 
-bash Copy code npm run dev This will start the Next.js development server and
-make your app accessible at http://localhost:3000.
+2. Install dependencies:
 
-Building for Production To build the project for production, use:
+```
+pnpm run dev
+```
 
-bash Copy code npm run build This will create an optimized production build in
-the out/ directory.
+Open http://localhost:3000 in your browser to see your Next.js app.
 
-Running in Production To run the production build locally, use:
+Available Scripts Start Development Server:
 
-bash Copy code npm start Your app will be available at http://localhost:3000.
+```
+pnpm run dev
 
-Additional Resources Next.js Documentation - Explore more about Next.js and its
-features. React Documentation - Learn more about React, the library that powers
-Next.js. Feel free to customize this starter template according to your project
-requirements.
+```
 
-Happy coding! 🚀
+bash Copy code npm run dev Build for Production:
+
+```
+pnpm run build
+
+```
+
+bash Copy code npm run build Run Production Server:
+
+```
+pnpm run dev
+
+```
+
+bash Copy code npm start Lint Code:
+
+```
+pnpm run lint
+
+```
+
+Folder Structure
+
+pages/: Your Next.js pages. public/: Static assets like images, fonts, etc.
+styles/: Global styles and utility classes. components/: Reusable React
+components. api/: API routes.

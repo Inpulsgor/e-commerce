@@ -1,13 +1,19 @@
 import React from 'react';
 
-import { ProductNews } from '@/app/components/ProductNews';
-import { ProductList } from '@/app/components/ProductList';
+import { ProductNews } from '@/app/common/components/ProductNews';
+import { ProductList } from '@/app/common/components/ProductList';
 
-export default function Home() {
+import { getStoreProducts } from '@/app/common/api/store';
+
+export const dynamic = 'force-dynamic';
+
+export default async function Home() {
+  const data = await getStoreProducts();
+
   return (
     <main className="bg-white pb-6 sm:pb-8 lg:pb-12">
-      <ProductNews />
-      <ProductList />
+      <ProductNews products={data} />
+      <ProductList products={data} />
     </main>
   );
 }

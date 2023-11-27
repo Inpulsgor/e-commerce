@@ -1,72 +1,47 @@
-'use client';
+import React, { FC } from 'react';
 
-import React, { FC, Usable, use } from 'react';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
-import { ProductItem } from '@/app/components/ProductItem';
-import { IProduct, getStoreProducts } from '@/app/api/store';
+import { ProductItem } from '@/app/common/components/ProductItem';
+import { IProduct, getProductCategories } from '@/app/common/api/store';
 
-const productsPromise = getStoreProducts();
+interface IProps {
+  products: IProduct[];
+}
 
-export const ProductList: FC = () => {
-  const data = use(productsPromise as Usable<IProduct[]>);
+export const ProductList: FC<IProps> = async ({ products }) => {
+  const categories = await getProductCategories();
 
   return (
     <section className="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-8">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-6">
         <span className="text-sm font-semibold">1-16 of 148 Products</span>
-        <button className="relative text-sm focus:outline-none group mt-4 sm:mt-0">
-          <div className="flex items-center justify-between w-40 h-10 px-3 border-2 border-gray-300 rounded hover:bg-gray-300">
-            <span className="font-medium">Popular</span>
-            <svg
-              className="w-4 h-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-          <div className="absolute z-10 flex-col items-start hidden w-full pb-1 bg-white shadow-lg rounded group-focus:flex">
-            <a
-              className="w-full px-4 py-2 text-left hover:bg-gray-200"
-              href="#"
-            >
-              Popular
-            </a>
-            <a
-              className="w-full px-4 py-2 text-left hover:bg-gray-200"
-              href="#"
-            >
-              Featured
-            </a>
-            <a
-              className="w-full px-4 py-2 text-left hover:bg-gray-200"
-              href="#"
-            >
-              Newest
-            </a>
-            <a
-              className="w-full px-4 py-2 text-left hover:bg-gray-200"
-              href="#"
-            >
-              Lowest Price
-            </a>
-            <a
-              className="w-full px-4 py-2 text-left hover:bg-gray-200"
-              href="#"
-            >
-              Highest Price
-            </a>
-          </div>
-        </button>
+
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Select a category" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              {categories.map(category => (
+                <SelectItem key={category} value={category}>
+                  {category}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-12 w-full mt-6">
-        {data.map(product => (
+        {products.map(product => (
           <ProductItem key={product?.id} product={product} />
         ))}
       </div>

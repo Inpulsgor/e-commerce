@@ -1,8 +1,9 @@
 import React, { FC, ReactNode } from 'react';
 
-import { AppBar } from '@/app/layout/AppBar';
-import { AppBasement } from '@/app/layout/AppBasement';
-import { Providers } from '@/common/context/Providers';
+import { Providers } from '@/app/common/context/Providers';
+import { AppBar } from '@/app/common/layout/AppBar';
+import { AppBasement } from '@/app/common/layout/AppBasement';
+import { ShoppingCart } from '@/app/common/components/ShoppingCart';
 
 interface IProps {
   children: ReactNode;
@@ -16,6 +17,7 @@ export const AppLayout: FC<IProps> = ({ children }) => (
       {children}
 
       <AppBasement />
+      <ShoppingCart />
     </div>
   </Providers>
 );

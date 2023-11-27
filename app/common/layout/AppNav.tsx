@@ -4,7 +4,7 @@ import React, { FC } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
-import { IRoute } from '@/common/types/routes';
+import { IRoute } from '@/app/common/types/routes';
 
 interface IProps {
   routes: IRoute[];
