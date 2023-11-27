@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Getting Started with Next.js 14 This repository contains the basic setup for a
+Next.js 14 project, a popular React framework for building modern web
+applications.
 
-## Getting Started
+Prerequisites Make sure you have Node.js and npm installed on your machine.
 
-First, run the development server:
+Setup Clone the Repository:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+bash Copy code git clone https://github.com/your-username/nextjs-14-starter.git
+Navigate to the Project Directory:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+bash Copy code cd nextjs-14-starter Install Dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+bash Copy code npm install Development To start the development server, run:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+bash Copy code npm run dev This will start the Next.js development server and
+make your app accessible at http://localhost:3000.
 
-## Learn More
+Building for Production To build the project for production, use:
 
-To learn more about Next.js, take a look at the following resources:
+bash Copy code npm run build This will create an optimized production build in
+the out/ directory.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Running in Production To run the production build locally, use:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+bash Copy code npm start Your app will be available at http://localhost:3000.
 
-## Deploy on Vercel
+Additional Resources Next.js Documentation - Explore more about Next.js and its
+features. React Documentation - Learn more about React, the library that powers
+Next.js. Feel free to customize this starter template according to your project
+requirements.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Happy coding! 🚀
