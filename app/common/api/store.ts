@@ -13,7 +13,6 @@ export interface IProduct {
   category: string;
   image: string;
   rating: Rating;
-  price_id: string;
 }
 
 enum Categories {

@@ -6,7 +6,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 import { ProductPreview } from '@/app/product/components/ProductPreview';
 import { AddToCartButton } from '@/app/product/components/AddToCartButton';
-import { CheckoutButton } from '@/app/product/components/CheckoutButton';
+// import { CheckoutButton } from '@/app/product/components/CheckoutButton';
 import { IProduct, getStoreProductById } from '@/app/common/api/store';
 
 export default async function ProductPge({
@@ -22,7 +22,7 @@ export default async function ProductPge({
   const prevPrice = price ? (price + 30).toFixed(2) : 0;
 
   return (
-    <div className="bg-white py-8 ">
+    <div className="bg-white py-8 h-full">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8 h-full justify-center items-center flex">
         <div className="grid gap-8 md:grid-cols-2">
           {!!image ? (
@@ -75,7 +75,7 @@ export default async function ProductPge({
             {data && (
               <div className="flex gap-2.5">
                 <AddToCartButton currency="USD" product={data} />
-                <CheckoutButton currency="USD" product={data} />
+                {/* <CheckoutButton currency="USD" product={data} /> */}
               </div>
             )}
 

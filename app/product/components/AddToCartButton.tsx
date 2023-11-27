@@ -12,21 +12,28 @@ export interface IProps {
 }
 
 const AddToCartButtonBase: FC<IProps> = ({ currency, product }) => {
-  const { addItem, handleCartClick } = useShoppingCart();
+  const { addItem, cartDetails, incrementItem, handleCartClick } =
+    useShoppingCart();
 
-  const { price_id, title, description, price, image } = product ?? {};
+  const { title, description, price, image } = product ?? {};
 
   const handleAddProduct = () => {
+    const cartProducts = Object.values(cartDetails ?? {}) ?? [];
+
+    const productInCart = cartProducts.find(product => product?.name === title);
+
     const payload = {
       name: title,
       description,
       price,
       currency,
       image,
-      price_id,
+      sku: '',
     };
 
-    addItem(payload), handleCartClick();
+    !!productInCart ? incrementItem(productInCart.id) : addItem(payload);
+
+    handleCartClick();
   };
 
   return <Button onClick={handleAddProduct}>Add To Cart</Button>;

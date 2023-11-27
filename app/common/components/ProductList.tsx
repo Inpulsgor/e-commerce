@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC } from 'react';
 
 import {
@@ -22,7 +24,9 @@ export const ProductList: FC<IProps> = async ({ products }) => {
   return (
     <section className="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-8">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-6">
-        <span className="text-sm font-semibold">1-16 of 148 Products</span>
+        <span className="text-sm font-semibold">
+          1-20 of {products?.length} Products
+        </span>
 
         <Select>
           <SelectTrigger className="w-[180px]">

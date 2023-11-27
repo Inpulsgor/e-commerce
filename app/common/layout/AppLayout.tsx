@@ -14,9 +14,9 @@ export const AppLayout: FC<IProps> = ({ children }) => (
     <div className="grid grid-rows-[auto,1fr,auto] min-h-screen">
       <AppBar />
 
-      {children}
+      <main className="h-full">{children}</main>
 
-      <AppBasement />
+      {/* <AppBasement /> */}
       <ShoppingCart />
     </div>
   </Providers>

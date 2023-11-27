@@ -17,7 +17,7 @@ const CheckoutButtonBase: FC<IProps> = ({ product }) => {
   return (
     <Button
       variant="outline"
-      onClick={() => checkoutSingleItem(product.price_id)}
+      onClick={() => checkoutSingleItem(`${product.id}`)}
     >
       Checkout Now
     </Button>
