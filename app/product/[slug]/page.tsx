@@ -6,9 +6,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 import { ProductPreview } from '@/app/product/components/ProductPreview';
 import { AddToCartButton } from '@/app/product/components/AddToCartButton';
+import { CheckoutButton } from '@/app/product/components/CheckoutButton';
 import { IProduct, getStoreProductById } from '@/app/common/api/store';
-
-export const dynamic = 'force-dynamic';
 
 export default async function ProductPge({
   params,
@@ -73,25 +72,12 @@ export default async function ProductPge({
               <span className="text-sm">2-4 Day Shipping</span>
             </div>
 
-            <div className="flex gap-2.5">
-              <AddToCartButton
-                currency="USD"
-                description={description}
-                image={image}
-                name={title}
-                price={price}
-                key={id}
-              />
-              {/* <CheckoutNow
-                currency="USD"
-                description={data.description}
-                image={data.images[0]}
-                name={data.name}
-                price={data.price}
-                key={data._id}
-                price_id={data.price_id}
-              /> */}
-            </div>
+            {data && (
+              <div className="flex gap-2.5">
+                <AddToCartButton currency="USD" product={data} />
+                <CheckoutButton currency="USD" product={data} />
+              </div>
+            )}
 
             <p className="mt-12 text-base text-gray-500 tracking-wide">
               {description}

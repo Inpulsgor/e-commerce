@@ -4,36 +4,21 @@ import React, { FC, memo } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { useShoppingCart } from 'use-shopping-cart';
+import { IProduct } from '@/app/common/api/store';
 
 export interface IProps {
-  name: string;
-  description: string;
-  price: number;
   currency: string;
-  image: string;
+  product: IProduct;
 }
 
-const CheckoutButtonBase: FC<IProps> = ({
-  currency,
-  description,
-  image,
-  name,
-  price,
-}) => {
+const CheckoutButtonBase: FC<IProps> = ({ product }) => {
   const { checkoutSingleItem } = useShoppingCart();
 
-  const buyNow = (priceId: string) => checkoutSingleItem(priceId);
-
-  const product = {
-    name,
-    description,
-    price,
-    currency,
-    image,
-  };
-
   return (
-    <Button variant="outline" onClick={() => buyNow('')}>
+    <Button
+      variant="outline"
+      onClick={() => checkoutSingleItem(product.price_id)}
+    >
       Checkout Now
     </Button>
   );

@@ -12,7 +12,7 @@ const ProductBase: FC<IProps> = ({ product }) => {
   const { image, title, price = 0, id, category } = product;
 
   return (
-    <div className="block rounded-lg shadow-lg bg-white">
+    <div className="rounded-lg shadow-lg bg-white flex flex-col justify-between items-center">
       <Link href={`/product/${id}`} className="block h-64">
         <Image
           src={image}
@@ -23,10 +23,10 @@ const ProductBase: FC<IProps> = ({ product }) => {
         />
       </Link>
 
-      <div className="flex flex-col mt-3 p-2">
+      <div className="flex flex-col mt-3 px-4 pb-4 w-full">
         <p className="text-sm font-medium">{title}</p>
 
-        <div className="flex justify-between ">
+        <div className="flex justify-between pt-2">
           <div className="flex items-center">
             <span className="text-xs font-medium text-gray-600">category:</span>
             <span className="text-xs font-medium ml-1 text-indigo-500">

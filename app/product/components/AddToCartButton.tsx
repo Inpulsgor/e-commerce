@@ -4,35 +4,29 @@ import { FC, memo } from 'react';
 import { useShoppingCart } from 'use-shopping-cart';
 
 import { Button } from '@/components/ui/button';
+import { IProduct } from '@/app/common/api/store';
 
 export interface IProps {
-  name: string;
-  description: string;
-  price: number;
   currency: string;
-  image: string;
+  product: IProduct;
 }
 
-const AddToCartButtonBase: FC<IProps> = ({
-  currency,
-  description,
-  image,
-  name,
-  price,
-}) => {
+const AddToCartButtonBase: FC<IProps> = ({ currency, product }) => {
   const { addItem, handleCartClick } = useShoppingCart();
 
+  const { price_id, title, description, price, image } = product ?? {};
+
   const handleAddProduct = () => {
-    const product = {
-      name,
+    const payload = {
+      name: title,
       description,
       price,
       currency,
       image,
-      sku: '', // !TODO:
+      price_id,
     };
 
-    addItem(product), handleCartClick();
+    addItem(payload), handleCartClick();
   };
 
   return <Button onClick={handleAddProduct}>Add To Cart</Button>;
