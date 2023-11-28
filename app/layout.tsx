@@ -14,7 +14,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: 'E-Commerce app',
-  description: 'Test E-Commerce app',
+  description: 'E-Commerce app',
 };
 
 interface RootLayoutProps {

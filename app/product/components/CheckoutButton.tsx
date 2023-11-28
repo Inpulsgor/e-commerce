@@ -1,9 +1,9 @@
 'use client';
 
 import React, { FC, memo } from 'react';
+import { useShoppingCart } from 'use-shopping-cart';
 
 import { Button } from '@/components/ui/button';
-import { useShoppingCart } from 'use-shopping-cart';
 import { IProduct } from '@/app/common/api/store';
 
 export interface IProps {
@@ -14,11 +14,10 @@ export interface IProps {
 const CheckoutButtonBase: FC<IProps> = ({ product }) => {
   const { checkoutSingleItem } = useShoppingCart();
 
+  const handleClick = () => checkoutSingleItem(`${product.id}`);
+
   return (
-    <Button
-      variant="outline"
-      onClick={() => checkoutSingleItem(`${product.id}`)}
-    >
+    <Button variant="outline" onClick={handleClick}>
       Checkout Now
     </Button>
   );

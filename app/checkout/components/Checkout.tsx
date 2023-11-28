@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useShoppingCart } from 'use-shopping-cart';
 import { useToast } from '@/components/ui/use-toast';

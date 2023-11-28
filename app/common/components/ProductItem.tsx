@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { IProduct } from '@/app/common/api/store';
+import { PATH } from '@/app/common/types/routes';
 
 interface IProps {
   product: IProduct;
@@ -13,7 +14,7 @@ const ProductBase: FC<IProps> = ({ product }) => {
 
   return (
     <div className="rounded-lg shadow-lg bg-white flex flex-col justify-between items-center">
-      <Link href={`/product/${id}`} className="block h-64">
+      <Link href={`${PATH.PRODUCT}/${id}`} className="block h-64">
         <Image
           src={image}
           alt="Product"

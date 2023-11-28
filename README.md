@@ -1,58 +1,88 @@
-# eShopping app
+# Next.js 14 E-commerce App
+
+Welcome to the Next.js 14 E-commerce project! This project is built with
+Next.js, a React framework, to create a dynamic and efficient E-commerce
+website.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Project](#running-the-project)
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
 
 ## Getting Started
 
-**Clone the repository:**
+### Prerequisites
 
-```bash
-git clone https://github.com/your-username/your-project.git
-cd your-project
-```
+Before you begin, ensure you have the following dependencies installed:
 
-1. Install dependencies:
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 
-```
-pnpm install
-```
+### Installation
 
-2. Install dependencies:
+1. Clone the repository:
 
-```
-pnpm run dev
-```
+   ```bash
+   git clone https://github.com/Inpulsgor/e-commerce.git
 
-Open http://localhost:3000 in your browser to see your Next.js app.
+   ```
 
-Available Scripts Start Development Server:
+2. Navigate to the project directory:
 
-```
-pnpm run dev
+   ```bash
+   cd e-commerce
 
-```
+   ```
 
-bash Copy code npm run dev Build for Production:
+3. Install dependencies:
 
-```
-pnpm run build
+   ```bash
+   pnpm install
+   ```
 
-```
+### Running the Project
 
-bash Copy code npm run build Run Production Server:
+1. Start the development server::
 
-```
-pnpm run dev
+   ```bash
+   pnpm run dev
+   ```
 
-```
+Open http://localhost:3000 in your browser to view the project.
 
-bash Copy code npm start Lint Code:
+### Project Structure
 
-```
-pnpm run lint
+Main folders and files.
 
-```
+e-commerce/ 
+|-- huksy/ 
+|-- next/ 
+|-- vscode/ 
+|-- app/ 
+|-- components/ 
+|-- lib/
+|-- public/ 
+|-- .gitignore 
+|-- package.json 
+|-- README.md 
+|-- ...
 
-Folder Structure
+### Features
 
-pages/: Your Next.js pages. public/: Static assets like images, fonts, etc.
-styles/: Global styles and utility classes. components/: Reusable React
-components. api/: API routes.
+List the key features of E-commerce project.
+
+- Product catalog
+- Shopping cart functionality
+- Checkout process
+
+# Technologies Used
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS

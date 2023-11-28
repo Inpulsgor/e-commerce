@@ -1,4 +1,4 @@
-const baseUrl = 'https://fakestoreapi.com';
+const baseUrl = process.env.NEXT_PUBLIC_STORE_API || 'https://fakestoreapi.com';
 
 type Rating = {
   rate: number;
@@ -22,6 +22,7 @@ enum Categories {
   WomensClothing = "women's clothing",
 }
 
+// GET products list
 export const getStoreProducts = async (): Promise<IProduct[]> => {
   const response = await fetch(`${baseUrl}/products`);
 
@@ -30,6 +31,7 @@ export const getStoreProducts = async (): Promise<IProduct[]> => {
   return [];
 };
 
+// GET single product by ID
 export const getStoreProductById = async (
   id: string,
 ): Promise<IProduct | null> => {
@@ -40,6 +42,7 @@ export const getStoreProductById = async (
   return null;
 };
 
+// product categories
 export const getProductCategories = async (): Promise<Categories[]> => {
   const response = await fetch(`${baseUrl}/products/categories`);
 
