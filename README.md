@@ -59,18 +59,20 @@ Open http://localhost:3000 in your browser to view the project.
 
 Main folders and files.
 
-e-commerce/ 
-|-- huksy/ 
-|-- next/ 
-|-- vscode/ 
-|-- app/ 
-|-- components/ 
-|-- lib/
-|-- public/ 
-|-- .gitignore 
-|-- package.json 
-|-- README.md 
-|-- ...
+ ```bash
+   e-commerce/
+	|-- huksy/
+	|-- next/
+	|-- vscode/
+	|-- app/
+	|-- components/
+	|-- lib/
+	|-- public/
+	|-- .gitignore
+	|-- package.json
+	|-- README.md
+	|-- ...
+```
 
 ### Features
 
