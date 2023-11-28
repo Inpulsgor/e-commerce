@@ -55,7 +55,7 @@ Before you begin, ensure you have the following dependencies installed:
 
 Open http://localhost:3000 in your browser to view the project.
 
-### Project Structure
+## Project Structure
 
 Main folders and files.
 
@@ -74,7 +74,7 @@ Main folders and files.
 	|-- ...
 ```
 
-### Features
+## Features
 
 List the key features of E-commerce project.
 
@@ -82,7 +82,7 @@ List the key features of E-commerce project.
 - Shopping cart functionality
 - Checkout process
 
-# Technologies Used
+## Technologies Used
 
 - Next.js
 - React
