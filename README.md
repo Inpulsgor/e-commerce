@@ -21,7 +21,7 @@ website.
 Before you begin, ensure you have the following dependencies installed:
 
 - [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+- [pnpm](https://pnpm.io/) or [Yarn](https://yarnpkg.com/)
 
 ### Installation
 
