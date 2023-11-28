@@ -79,7 +79,8 @@ Main folders and files.
 List the key features of E-commerce project.
 
 - Product catalog
-- Shopping cart functionality
+- Product preview
+- Shopping cart
 - Checkout process
 
 ## Technologies Used
